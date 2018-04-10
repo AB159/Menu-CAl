@@ -36,3 +36,5 @@ Gauntlets: $40
             continue
         elif share == "yes":
             splitWith = input("With how many?")
+#test
+            
