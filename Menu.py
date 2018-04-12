@@ -2,6 +2,7 @@
 Menu by Alex B
 4/5/18
 '''
+import sys
 totalPrice = 0
 menu = {"sword": 30, "shield": 45, "spear": 20, "duel-daggers": 15, "guantlets": 40}
 print("Welcome to the Weapon shop. Here we sell weapons so you can murder. Type quit at any point to leave")
@@ -32,7 +33,18 @@ Gauntlets: $40
     while True:
         share = input("Are you splitting the price ").lower()
         if share == "yes":
-            
-            
-           
-       
+           while True:
+               HowManySplit = input("With how many? ")
+               try:
+                    HowManySplit = float(HowManySplit)
+               except:
+                    print("Gimme a number")
+               totalPrice = totalPrice / HowManySplit
+               totalPrice = str(totalPrice) 
+               print("Your new total is " + totalPrice)
+               print("Thanks for shopping")
+               sys.exit()
+        if  share == "no":
+            while True:
+                print("Thanks for shopping")
+                sys.exit()
