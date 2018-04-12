@@ -31,8 +31,8 @@ Gauntlets: $40
         break
     while True:
         share = input("Are you splitting the price ").lower()
-        if share != "yes" or share != "no":
-            print("Yes or no?")
-            continue
-        elif share == "yes":
-            splitWith = input("With how many?")
+        if share == "yes":
+            
+            
+           
+       
