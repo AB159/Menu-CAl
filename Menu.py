@@ -2,7 +2,6 @@
 Menu by Alex B
 4/5/18
 '''
-import sys
 totalPrice = 0
 menu = {"sword": 30, "shield": 45, "spear": 20, "duel-daggers": 15, "guantlets": 40}
 print("Welcome to the Weapon shop. Here we sell weapons so you can murder. Type quit at any point to leave")
@@ -21,30 +20,26 @@ Gauntlets: $40
     if answer not in menu:
         print("We don't sell that")
         continue
-    while True:
-        HowMany = input("How many would you like? ")
-        try:
-            HowMany = float(HowMany)
-        except:
-            print("Sorry, can't do that")
-        totalPrice = menu[answer] * HowMany
-        print(totalPrice)
+    if answer in menu:
         break
-    while True:
+while True:
+    HowMany = input("How many would you like? ")
+    try:
+        HowMany = int(HowMany)
+        break
+    except:
+        print("Sorry, can't do that")
+        
+
+    totalPrice = menu[answer] * HowMany
+    print(totalPrice)
+while True:
+    cont = input("Have you finished your order? ").lower()
+    if cont != "yes" and cont != "no":
+        print("Yes or No?")
+        continue
+    if cont == "no":
+        break
+    if cont == "yes":
         share = input("Are you splitting the price ").lower()
-        if share == "yes":
-           while True:
-               HowManySplit = input("With how many? ")
-               try:
-                    HowManySplit = float(HowManySplit)
-               except:
-                    print("Gimme a number")
-               totalPrice = totalPrice / HowManySplit
-               totalPrice = str(totalPrice) 
-               print("Your new total is " + totalPrice)
-               print("Thanks for shopping")
-               sys.exit()
-        if  share == "no":
-            while True:
-                print("Thanks for shopping")
-                sys.exit()
+    
