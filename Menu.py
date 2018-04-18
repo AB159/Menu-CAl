@@ -31,8 +31,8 @@ while True:
         print("Sorry, can't do that")
         
 
-    totalPrice = menu[answer] * HowMany
-    print(totalPrice)
+totalPrice = menu[answer] * HowMany
+print(totalPrice, "Coins")
 while True:
     cont = input("Have you finished your order? ").lower()
     if cont != "yes" and cont != "no":
@@ -42,4 +42,21 @@ while True:
         break
     if cont == "yes":
         share = input("Are you splitting the price ").lower()
-    
+        if share != "yes" and share!= "no":
+             print("Yes or No?")
+             continue
+        if share == "yes":
+            split = input("With how many? ")
+            try:
+                split = float(split)
+            
+            except:
+                print("Gimme a number")
+            totalPrice = totalPrice / split
+            print("Your share price is", totalPrice)
+            break
+        if share == "no":
+            print("Thank you for buying")
+            print(totalPrice, "coins")
+            break
+            break
