@@ -24,14 +24,15 @@ Gauntlets: $40
             continue
         if answer in menu:
             break
-    while True:
-        HowMany = input("How many would you like? ")
-        try:
-            HowMany = int(HowMany)
-            break
-        except:
-            print("Sorry, can't do that")
-            continue
+break
+while True:
+    HowMany = input("How many would you like? ")
+    try:
+        HowMany = int(HowMany)
+        break
+    except:
+        print("Sorry, can't do that")
+        continue
 
         totalPrice += menu[answer] * HowMany
 print(totalPrice, "Coins")
