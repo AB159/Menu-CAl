@@ -6,33 +6,28 @@ answer = ""
 totalPrice = 0
 menu = {"sword": 30, "shield": 45, "spear": 20, "duel-daggers": 15, "guantlets": 40}
 print("Welcome to the Weapon shop. Here we sell weapons so you can murder. Type quit at any point to finish ordering")
-while True:
-    print(''' ''')
-    print('''Sword: $30
+print(''' ''')
+print('''Sword: $30
 Shield: $45
 Spear: $20
 Duel-Daggers: $15
 Gauntlets: $40
     ''')
+while answer != "quit":
     answer = input("What would you like to order? ").lower()
-    while answer != "quit":
-        if answer == "quit":
-            print("See ya!")
-            break
-        if answer not in menu:
-            print("We don't sell that")
-            continue
-        if answer in menu:
-            break
-    while True:
+    if answer == "quit":
+        break
+    if answer not in menu:
+        print("We don't sell that")
+        continue
+    if answer in menu: 
         HowMany = input("How many would you like? ")
         try:
             HowMany = int(HowMany)
-            break
+            continue
         except:
             print("Sorry, can't do that")
             continue
-
         totalPrice += menu[answer] * HowMany
 print(totalPrice, "Coins")
 while True:
@@ -53,5 +48,4 @@ while True:
         if share == "no":
             print("Thank you for buying")
             print(totalPrice, "coins")
-            break
             break
