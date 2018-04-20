@@ -1,3 +1,4 @@
+
 '''
 Menu by Alex B
 4/5/18
@@ -24,11 +25,12 @@ while answer != "quit":
         HowMany = input("How many would you like? ")
         try:
             HowMany = int(HowMany)
+            totalPrice += menu[answer] * HowMany
             continue
         except:
             print("Sorry, can't do that")
             continue
-        totalPrice += menu[answer] * HowMany
+        
 print(totalPrice, "Coins")
 while True:
         share = input("Are you splitting the price ").lower()
