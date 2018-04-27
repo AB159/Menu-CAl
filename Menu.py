@@ -21,7 +21,7 @@ while answer != "quit":
     if answer not in menu:
         print("We don't sell that")
         continue
-    if answer in menu: 
+    if answer in menu:
         HowMany = input("How many would you like? ")
         try:
             HowMany = int(HowMany)
@@ -30,7 +30,7 @@ while answer != "quit":
         except:
             print("Sorry, can't do that")
             continue
-        
+
 print(totalPrice, "Coins")
 while True:
         share = input("Are you splitting the price ").lower()
@@ -40,10 +40,13 @@ while True:
         if share == "yes":
             split = input("With how many? ")
             try:
-                split = float(split)
+                split = int(split)
 
             except:
                 print("Gimme a number")
+            if split == 0:
+               print(totalPrice, "coins")
+               break
             totalPrice = totalPrice / split
             print("Your share price is", totalPrice)
             break
